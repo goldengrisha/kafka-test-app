@@ -10,7 +10,6 @@ def main():
             bootstrap_servers=["localhost:9092"],
             auto_offset_reset="earliest",
             enable_auto_commit=True,
-            group_id="my-group-id",
             value_deserializer=lambda x: loads(x.decode("utf-8")),
         )
 
@@ -18,7 +17,6 @@ def main():
             event_data = event.value
             # Do whatever you want
             print(event_data)
-            # sleep(2)
 
     except Exception as error:
         print(error)
