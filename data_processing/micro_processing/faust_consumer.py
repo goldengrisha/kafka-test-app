@@ -18,6 +18,7 @@ result_topic = app.topic("result")
 async def process(transactions):
 
     # please set timer for retreiving `within is seconds`
+    # here it set a limit of 10000 but it can be whatever big
     async for list_transactions in transactions.take(10000, within=10):
 
         transaction_sum = list_sum(
